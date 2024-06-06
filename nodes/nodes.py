@@ -55,7 +55,7 @@ class AverageColorNode:
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("IMAGE", "HEX COLOR")
     FUNCTION = "calculate_average_color"
-    CATEGORY = "MHP Custom Nodes"
+    CATEGORY = "IE Custom Nodes"
 
     def calculate_average_color(self, image):
         # Ensure the input is a PIL Image, assuming 'image' input is a tensor
@@ -90,7 +90,7 @@ class ComplementaryColorNode:
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("IMAGE", "HEX COLOR")
     FUNCTION = "calculate_complementary_color"
-    CATEGORY = "MHP Custom Nodes"
+    CATEGORY = "IE Custom Nodes"
 
     def calculate_complementary_color(self, image):
         # Ensure the input is a PIL Image, assuming 'image' input is a tensor
@@ -122,7 +122,7 @@ class HexToColorNameNode:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("COLOR NAME",)
     FUNCTION = "calculate_color_name"
-    CATEGORY = "MHP Custom Nodes"
+    CATEGORY = "IE Custom Nodes"
 
     def calculate_color_name(self, hex_color):
         color_name = get_color_name(hex_color)
