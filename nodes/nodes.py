@@ -115,7 +115,7 @@ class HexToColorNameNode:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "hex_color": ("STRING",),
+                "hex_color": ("STRING", {"forceInput": True}),
             },
         }
 
