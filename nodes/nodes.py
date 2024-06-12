@@ -107,6 +107,32 @@ class ComplementaryColorNode:
         return (output_image_tensor, "Complementary color")
 
 
+class HexColorToImageNode:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "hex_color": ("STRING", {"forceInput": True}),
+                "image_size": ("INT", {"forceInput": True}),
+            },
+        }
+
+    RETURN_TYPES = ("IMAGE",)
+    RETURN_NAMES = ("IMAGE",)
+    FUNCTION = "hex_color_to_image"
+    CATEGORY = "IE Custom Nodes"
+
+    def hex_color_to_image(self, hex_color, image_size):
+        # Create a PIL image with the specified hex color and size
+        image = Image.new("RGB", (image_size, image_size), hex_color)
+        image_tensor = pil2tensor(image)
+
+        return (image_tensor,)
+
+
 class HexToColorNameNode:
     def __init__(self):
         pass
