@@ -116,8 +116,8 @@ class HexColorToImageNode:
         return {
             "required": {
                 "hex_color": ("STRING", {"forceInput": True}),
-                "image_width": ("INT",),
-                "image_height": ("INT",),
+                "image_width": ("INT", {"default": 1024}),
+                "image_height": ("INT", {"default": 1024}),
             },
         }
 
