@@ -154,3 +154,30 @@ class HexToColorNameNode:
     def calculate_color_name(self, hex_color):
         color_name = get_color_name(hex_color)
         return (color_name,)
+
+
+class RandomStringNode:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(cls):
+        return {
+            "required": {
+                "length": ("INT", {"default": 10}),
+            },
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("RANDOM STRING",)
+    FUNCTION = "generate_random_string"
+    CATEGORY = "IE Custom Nodes"
+
+    def generate_random_string(self, length):
+        import random
+        import string
+
+        random_string = "".join(
+            random.choices(string.ascii_uppercase + string.digits, k=length)
+        )
+        return (random_string,)

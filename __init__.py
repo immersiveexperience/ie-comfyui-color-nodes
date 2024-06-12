@@ -5,4 +5,5 @@ NODE_CLASS_MAPPINGS = {
     "Complementary Color": ComplementaryColorNode,
     "Hex Color to Image": HexColorToImageNode,
     "Hex to Color Name": HexToColorNameNode,
+    "Random String": RandomStringNode,
 }
