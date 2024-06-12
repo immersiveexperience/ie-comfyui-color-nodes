@@ -116,7 +116,8 @@ class HexColorToImageNode:
         return {
             "required": {
                 "hex_color": ("STRING", {"forceInput": True}),
-                "image_size": ("INT", {"forceInput": True}),
+                "image_width": ("INT",),
+                "image_height": ("INT",),
             },
         }
 
@@ -125,9 +126,9 @@ class HexColorToImageNode:
     FUNCTION = "hex_color_to_image"
     CATEGORY = "IE Custom Nodes"
 
-    def hex_color_to_image(self, hex_color, image_size):
+    def hex_color_to_image(self, hex_color, image_width, image_height):
         # Create a PIL image with the specified hex color and size
-        image = Image.new("RGB", (image_size, image_size), hex_color)
+        image = Image.new("RGB", (image_width, image_height), hex_color)
         image_tensor = pil2tensor(image)
 
         return (image_tensor,)
